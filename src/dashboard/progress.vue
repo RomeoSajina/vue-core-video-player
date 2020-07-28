@@ -86,7 +86,7 @@ export default {
         maxLeft: maxVal
       }
       if (this.getFullscreen()) {
-        coor.x = e.pageX - this._dragEl.offsetLeft
+        coor.x = (isMobile ? e.touches[0].clientX : e.pageX) - this._dragEl.offsetLeft
       }
       const move = function (ev) {
         if (!self._dragEl) {
